@@ -21,6 +21,9 @@ import {
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 
+const imageCdn = (path: string) =>
+  `https://registry-demo-microsoft.vercel.app/${path}`;
+
 export default function SharePointDashboard() {
   const [followedSites, setFollowedSites] = useState([
     { id: 1, name: "Mint Condition Crunch Cookie", starred: true },
@@ -156,7 +159,7 @@ export default function SharePointDashboard() {
             name="User"
             size={32}
             className="cursor-pointer"
-            image={{ src: "/vibrant-street-market.png" }}
+            image={{ src: imageCdn("vibrant-street-market.png") }}
           />
         </div>
       </header>
@@ -304,7 +307,7 @@ export default function SharePointDashboard() {
                   <div className="bg-[#0078d4] rounded-lg overflow-hidden shadow-sm text-white">
                     <div className="h-48 relative">
                       <Image
-                        src="/business-document-outside.png"
+                        src={imageCdn("business-document-outside.png")}
                         alt="News"
                         width={800}
                         height={400}
@@ -332,7 +335,7 @@ export default function SharePointDashboard() {
                   <div className="bg-white rounded-lg overflow-hidden shadow-sm">
                     <div className="h-48 relative">
                       <Image
-                        src="/tranquil-sunset.png"
+                        src={imageCdn("tranquil-sunset.png")}
                         alt="Communication site"
                         width={800}
                         height={400}
@@ -351,7 +354,9 @@ export default function SharePointDashboard() {
                           name="Kevin Stratvert"
                           size={32}
                           className="mr-3"
-                          image={{ src: "/vibrant-street-market.png" }}
+                          image={{
+                            src: imageCdn("/vibrant-street-market.png"),
+                          }}
                         />
                         <div className="flex flex-col">
                           <Text weight="medium">Kevin Stratvert</Text>
@@ -435,7 +440,9 @@ export default function SharePointDashboard() {
                                     size={32}
                                     className="mr-3"
                                     image={{
-                                      src: "/vibrant-street-market.png",
+                                      src: imageCdn(
+                                        "vibrant-street-market.png",
+                                      ),
                                     }}
                                   />
                                 ) : (
