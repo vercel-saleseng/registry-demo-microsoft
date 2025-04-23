@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,56 +11,45 @@
 
 @layer base {
   :root {
-    /* Main theme colors based on the SharePoint blue theme */
-    --background: 210 100% 98%;
-    --foreground: 214 60% 21%;
+    /* SharePoint blue theme colors */
+    --background: 0 0% 98%;
+    --foreground: 210 12% 16%;
     --card: 0 0% 100%;
-    --card-foreground: 214 60% 21%;
+    --card-foreground: 210 12% 16%;
     --popover: 0 0% 100%;
-    --popover-foreground: 214 60% 21%;
-    --primary: 214 60% 31%;
+    --popover-foreground: 210 12% 16%;
+    --primary: 206 100% 40%; /* SharePoint blue #0078D4 */
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 214 60% 21%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 214 30% 50%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 214 60% 21%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 214 60% 50%;
+    --secondary: 204 33% 97%; /* Light gray background #F5F8FA */
+    --secondary-foreground: 210 12% 16%;
+    --muted: 210 10% 96%;
+    --muted-foreground: 210 12% 60%;
+    --accent: 180 46% 36%; /* Teal action buttons #1B7F79 */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 78.90% 57.25%;
+    --destructive-foreground: 0 0% 94.90%;
+    --border: 210 16% 93%;
+    --input: 210 16% 93%;
+    --ring: 206 100% 40%;
 
     /* Chart colors */
-    --chart-1: 214 60% 50%;
-    --chart-2: 214 40% 40%;
-    --chart-3: 214 50% 30%;
-    --chart-4: 214 60% 20%;
-    --chart-5: 214 70% 10%;
+    --chart-1: 206 100% 40%; /* SharePoint blue */
+    --chart-2: 180 46% 36%; /* Teal */
+    --chart-3: 199 98% 39%; /* Light blue */
+    --chart-4: 210 12% 40%; /* Dark gray */
+    --chart-5: 45 100% 50%; /* Gold */
 
     /* Sidebar colors */
-    --sidebar: 214 60% 31%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 214 60% 31%;
-    --sidebar-accent: 214 40% 40%;
+    --sidebar: 0 0% 98%;
+    --sidebar-foreground: 210 12% 16%;
+    --sidebar-primary: 206 100% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 46% 36%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 214 30% 40%;
-    --sidebar-ring: 0 0% 100%;
+    --sidebar-border: 210 16% 93%;
+    --sidebar-ring: 206 100% 40%;
 
-    /* Theme palette from the second image */
-    --theme-darker: 214 60% 21%; /* #004578 */
-    --theme-dark: 214 60% 31%; /* #005A9E */
-    --theme-dark-alt: 214 60% 41%; /* #106EBE */
-    --theme-primary: 214 60% 50%; /* #0078D4 */
-    --theme-secondary: 214 50% 60%; /* #2B88D8 */
-    --theme-tertiary: 214 40% 70%; /* #71AFE5 */
-    --theme-light: 214 30% 80%; /* #C7E0F4 */
-    --theme-lighter: 214 20% 90%; /* #DEECF9 */
-    --theme-lighter-alt: 214 10% 95%; /* #EFF6FC */
-
-    /* Font and radius settings */
+    /* Font settings */
     --font-sans: "Segoe UI", system-ui, sans-serif;
     --font-serif: Georgia, serif;
     --font-mono: "Consolas", monospace;
@@ -76,44 +66,43 @@
     --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
 
-  /* Dark mode theme */
   .dark {
-    --background: 214 60% 10%;
+    --background: 210 30% 10%;
     --foreground: 0 0% 98%;
-    --card: 214 50% 13%;
+    --card: 210 30% 15%;
     --card-foreground: 0 0% 98%;
-    --popover: 214 50% 13%;
+    --popover: 210 30% 15%;
     --popover-foreground: 0 0% 98%;
-    --primary: 214 60% 50%;
+    --primary: 206 100% 40%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 214 40% 20%;
+    --secondary: 210 30% 20%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 214 40% 20%;
-    --muted-foreground: 214 20% 70%;
-    --accent: 214 40% 20%;
+    --muted: 210 30% 20%;
+    --muted-foreground: 210 10% 70%;
+    --accent: 180 46% 36%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 214 40% 20%;
-    --input: 214 40% 20%;
-    --ring: 214 60% 50%;
+    --border: 210 30% 25%;
+    --input: 210 30% 25%;
+    --ring: 206 100% 40%;
 
     /* Chart colors for dark mode */
-    --chart-1: 214 60% 50%;
-    --chart-2: 214 50% 60%;
-    --chart-3: 214 40% 70%;
-    --chart-4: 214 30% 80%;
-    --chart-5: 214 20% 90%;
+    --chart-1: 206 100% 50%;
+    --chart-2: 180 46% 46%;
+    --chart-3: 199 98% 49%;
+    --chart-4: 210 12% 70%;
+    --chart-5: 45 100% 60%;
 
     /* Sidebar colors for dark mode */
-    --sidebar: 214 60% 13%;
+    --sidebar: 210 30% 15%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 214 60% 50%;
+    --sidebar-primary: 206 100% 50%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 214 40% 30%;
+    --sidebar-accent: 180 46% 46%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 214 40% 25%;
-    --sidebar-ring: 214 60% 50%;
+    --sidebar-border: 210 30% 25%;
+    --sidebar-ring: 206 100% 50%;
   }
 }
 
@@ -124,7 +113,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans);
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   }
 }
 

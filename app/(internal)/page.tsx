@@ -8,6 +8,21 @@ import {
   CardContent,
 } from "@/components/ui/card";
 
+const getV0Url = (path: "start" | "dashboard") => {
+  let registryUrl = encodeURIComponent(
+    `https://registry-demo-microsoft.vercel.app/r/${path}.json`,
+  );
+  const title = encodeURIComponent(
+    `Fluent ${path.charAt(0).toUpperCase() + path.slice(1)}`,
+  );
+  const prompt = encodeURIComponent(
+    `A complete ${path} implementation with sidebar, stats cards, charts, and tables.`,
+  );
+
+  const v0Url = `https://v0.dev/chat/api/open?title=${title}&prompt=${prompt}&url=${registryUrl}`;
+  return v0Url;
+};
+
 export default function Home() {
   return (
     <div className="p-6 space-y-6">
@@ -24,7 +39,7 @@ export default function Home() {
                     Opens a blank app with the Fluent theme preconfigured.
                   </CardDescription>
                 </div>
-                <a href="https://v0.dev/chat/api/open?title=LumonCn+Starting+Kit&prompt=A+blank+app+with+the+Lumon+theme+preconfigured.+Begin+prompting+to+create+your+prototype%21+&url=https%3A%2F%2Fregistry-demo-xi.vercel.app%2Fr%2Fstart.json">
+                <a href={getV0Url("start")} target="_blank">
                   <img
                     src="https://v0.dev/chat-static/button.svg"
                     alt="Open in v0"
@@ -49,7 +64,7 @@ export default function Home() {
                     stats cards, charts, and tables.
                   </CardDescription>
                 </div>
-                <a href="https://v0.dev/chat/api/open?title=Dashboard&prompt=A+complete+dashboard+implementation+with+sidebar%2C+stats+cards%2C+charts%2C+and+tables.&url=https%3A%2F%2Fregistry-demo-xi.vercel.app%2Fr%2Fdashboard.json">
+                <a href={getV0Url("dashboard")} target="_blank">
                   <img
                     src="https://v0.dev/chat-static/button.svg"
                     alt="Open in v0"

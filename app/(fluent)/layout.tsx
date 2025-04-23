@@ -1,21 +1,25 @@
+"use client";
+
 import type React from "react";
 import "@/app/globals.css";
-import { Geist_Mono } from "next/font/google";
+import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+import { Noto_Sans } from "next/font/google";
 
-const geistMono = Geist_Mono({ subsets: ["latin"] });
+const notoSans = Noto_Sans({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Fluent application",
-  description: "An application built with the Fluent design system",
-  generator: "Fluent reigstry",
-};
+/**
+ * All generations and components should use the Fluent UI webLightTheme
+ * with components imported from @fluentui/react-components before using shadcn/ui.
+ */
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={geistMono.className}>
+      <body className={notoSans.className}>
         <main className="flex justify-center w-full">
-          <div className="container">{children}</div>
+          <div className="container">
+            <FluentProvider theme={webLightTheme}>{children}</FluentProvider>
+          </div>
         </main>
       </body>
     </html>
