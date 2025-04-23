@@ -12,9 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <body className={notoSans.className}>
         <main className="flex justify-center w-full">
-          <div className="container">
-            <FluentProvider theme={webLightTheme}>{children}</FluentProvider>
-          </div>
+          <FluentProvider theme={webLightTheme}>{children}</FluentProvider>
         </main>
       </body>
     </html>

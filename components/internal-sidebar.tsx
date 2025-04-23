@@ -140,9 +140,9 @@ export function InternalSidebar({
           </SidebarGroupContent>
         </SidebarGroup>
 
-        {/* Template Sources */}
+        {/* Templates */}
         <SidebarGroup>
-          <SidebarGroupLabel>Template Sources</SidebarGroupLabel>
+          <SidebarGroupLabel>Templates</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {templateSources.map((item) => (
