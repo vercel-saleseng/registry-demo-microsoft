@@ -10,10 +10,8 @@ import {
   Terminal,
   MonitorPlay,
   Library,
-  Lightbulb,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import {
   Sidebar,
   SidebarContent,
@@ -70,11 +68,6 @@ export function InternalSidebar({
       href: "https://ui.shadcn.com/docs/registry",
       icon: <Library className="h-4 w-4" />,
     },
-    {
-      title: "Experimental",
-      href: "/experimental",
-      icon: <FlaskConical className="h-4 w-4" />,
-    },
   ];
 
   const templateSources: NavItem[] = [
@@ -83,16 +76,6 @@ export function InternalSidebar({
       href: "/dashboard",
       icon: <LayoutDashboard className="h-4 w-4" />,
     },
-    {
-      title: "Couch Surfer",
-      href: "/couch-surfer",
-      icon: <MonitorPlay className="h-4 w-4" />,
-    },
-    {
-      title: "Terminal",
-      href: "/terminal",
-      icon: <Terminal className="h-4 w-4" />,
-    },
   ];
 
   return (
@@ -100,7 +83,7 @@ export function InternalSidebar({
       <SidebarHeader>
         <header className="px-2 py-4 flex items-center">
           <h1 className="text-xl font-bold text-[var(--zds-text-stronger)]">
-            LumonCn
+            Fluent
           </h1>
         </header>
       </SidebarHeader>
@@ -134,7 +117,10 @@ export function InternalSidebar({
                     }
                     tooltip={item.title}
                   >
-                    <Link href={item.href}>
+                    <Link
+                      href={item.href}
+                      target={item.href.includes("http") ? "_blank" : "_self"}
+                    >
                       {item.icon}
                       <span>{item.title}</span>
                     </Link>
@@ -142,7 +128,7 @@ export function InternalSidebar({
                   {item.badge && (
                     <SidebarMenuBadge
                       className={cn(
-                        "border bg-muted text-foreground border-border"
+                        "border bg-muted text-foreground border-border",
                       )}
                     >
                       {item.badge.text}

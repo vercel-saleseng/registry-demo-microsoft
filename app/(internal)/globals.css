@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -13,60 +9,122 @@ body {
 }
 
 @layer base {
-	:root {
-		--background: 180 21.05% 92.55%;
-		--foreground: 188.80 78.95% 18.63%;
-		--card: 180 23.81% 95.88%;
-		--card-foreground: 188.80 78.95% 18.63%;
-		--popover: 180 23.81% 95.88%;
-		--popover-foreground: 188.80 78.95% 18.63%;
-		--primary: 183.97 91.89% 29.02%;
-		--primary-foreground: 0 0% 100%;
-		--secondary: 216.49 78.86% 75.88%;
-		--secondary-foreground: 215 36.36% 25.88%;
-		--muted: 180 19.23% 89.80%;
-		--muted-foreground: 184 31.25% 37.65%;
-		--accent: 184 38.46% 84.71%;
-		--accent-foreground: 188.80 78.95% 18.63%;
-		--destructive: 0 62.45% 51.96%;
-		--destructive-foreground: 0 0% 100%;
-		--border: 185.71 26.58% 84.51%;
-		--input: 180 28.81% 88.43%;
-		--ring: 183.97 91.89% 29.02%;
-		--chart-1: 183.97 91.89% 29.02%;
-		--chart-2: 183.53 69.39% 38.43%;
-		--chart-3: 183.56 55.10% 48.04%;
-		--chart-4: 183.72 53.55% 58.63%;
-		--chart-5: 183.61 54.97% 70.39%;
-		--sidebar: 186.32 34.55% 89.22%;
-		--sidebar-foreground: 188.80 78.95% 18.63%;
-		--sidebar-primary: 183.97 91.89% 29.02%;
-		--sidebar-primary-foreground: 0 0% 100%;
-		--sidebar-accent: 184 38.46% 84.71%;
-		--sidebar-accent-foreground: 188.80 78.95% 18.63%;
-		--sidebar-border: 185.71 26.58% 84.51%;
-		--sidebar-ring: 183.97 91.89% 29.02%;
-		--font-sans: Geist, sans-serif;
-		--font-serif: Courier New, monospace;
-		--font-mono: Courier New, monospace;
-		--radius: 0.5rem;
-		--shadow-2xs: 1px 1px 2px 0px hsl(185 70% 30% / 0.07);
-		--shadow-xs: 1px 1px 2px 0px hsl(185 70% 30% / 0.07);
-		--shadow-sm: 1px 1px 2px 0px hsl(185 70% 30% / 0.15), 1px 1px 2px -1px hsl(185 70% 30% / 0.15);
-		--shadow: 1px 1px 2px 0px hsl(185 70% 30% / 0.15), 1px 1px 2px -1px hsl(185 70% 30% / 0.15);
-		--shadow-md: 1px 1px 2px 0px hsl(185 70% 30% / 0.15), 1px 2px 4px -1px hsl(185 70% 30% / 0.15);
-		--shadow-lg: 1px 1px 2px 0px hsl(185 70% 30% / 0.15), 1px 4px 6px -1px hsl(185 70% 30% / 0.15);
-		--shadow-xl: 1px 1px 2px 0px hsl(185 70% 30% / 0.15), 1px 8px 10px -1px hsl(185 70% 30% / 0.15);
-		--shadow-2xl: 1px 1px 2px 0px hsl(185 70% 30% / 0.38);
-	}
+  :root {
+    /* Main theme colors based on the SharePoint blue theme */
+    --background: 210 100% 98%;
+    --foreground: 214 60% 21%;
+    --card: 0 0% 100%;
+    --card-foreground: 214 60% 21%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 60% 21%;
+    --primary: 214 60% 31%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 214 60% 21%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 214 30% 50%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 214 60% 21%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 60% 50%;
+
+    /* Chart colors */
+    --chart-1: 214 60% 50%;
+    --chart-2: 214 40% 40%;
+    --chart-3: 214 50% 30%;
+    --chart-4: 214 60% 20%;
+    --chart-5: 214 70% 10%;
+
+    /* Sidebar colors */
+    --sidebar: 214 60% 31%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 214 60% 31%;
+    --sidebar-accent: 214 40% 40%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 214 30% 40%;
+    --sidebar-ring: 0 0% 100%;
+
+    /* Theme palette from the second image */
+    --theme-darker: 214 60% 21%; /* #004578 */
+    --theme-dark: 214 60% 31%; /* #005A9E */
+    --theme-dark-alt: 214 60% 41%; /* #106EBE */
+    --theme-primary: 214 60% 50%; /* #0078D4 */
+    --theme-secondary: 214 50% 60%; /* #2B88D8 */
+    --theme-tertiary: 214 40% 70%; /* #71AFE5 */
+    --theme-light: 214 30% 80%; /* #C7E0F4 */
+    --theme-lighter: 214 20% 90%; /* #DEECF9 */
+    --theme-lighter-alt: 214 10% 95%; /* #EFF6FC */
+
+    /* Font and radius settings */
+    --font-sans: "Segoe UI", system-ui, sans-serif;
+    --font-serif: Georgia, serif;
+    --font-mono: "Consolas", monospace;
+    --radius: 0.25rem;
+
+    /* Shadow settings */
+    --shadow-2xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Dark mode theme */
+  .dark {
+    --background: 214 60% 10%;
+    --foreground: 0 0% 98%;
+    --card: 214 50% 13%;
+    --card-foreground: 0 0% 98%;
+    --popover: 214 50% 13%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 214 60% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 214 40% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 214 40% 20%;
+    --muted-foreground: 214 20% 70%;
+    --accent: 214 40% 20%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 40% 20%;
+    --input: 214 40% 20%;
+    --ring: 214 60% 50%;
+
+    /* Chart colors for dark mode */
+    --chart-1: 214 60% 50%;
+    --chart-2: 214 50% 60%;
+    --chart-3: 214 40% 70%;
+    --chart-4: 214 30% 80%;
+    --chart-5: 214 20% 90%;
+
+    /* Sidebar colors for dark mode */
+    --sidebar: 214 60% 13%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 214 60% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 214 40% 30%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 214 40% 25%;
+    --sidebar-ring: 214 60% 50%;
+  }
 }
 
 @layer base {
   * {
     @apply border-border;
   }
-  
+
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
   }
 }
+
