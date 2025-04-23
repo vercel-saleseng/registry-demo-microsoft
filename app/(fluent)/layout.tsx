@@ -7,11 +7,6 @@ import { Noto_Sans } from "next/font/google";
 
 const notoSans = Noto_Sans({ subsets: ["latin"] });
 
-/**
- * All generations and components should use the Fluent UI webLightTheme
- * with components imported from @fluentui/react-components before using shadcn/ui.
- */
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">

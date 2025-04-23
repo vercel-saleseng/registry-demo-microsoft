@@ -15,8 +15,10 @@ const getV0Url = (path: "start" | "dashboard") => {
   const title = encodeURIComponent(
     `Fluent ${path.charAt(0).toUpperCase() + path.slice(1)}`,
   );
+
   const prompt = encodeURIComponent(
-    `A complete ${path} implementation with sidebar, stats cards, charts, and tables.`,
+    `A complete ${path} implementation with sidebar, stats cards, charts, and tables.
+  Use the Fluent UI webLightTheme with components imported from @fluentui/react-components before using shadcn/ui.`,
   );
 
   const v0Url = `https://v0.dev/chat/api/open?title=${title}&prompt=${prompt}&url=${registryUrl}`;
