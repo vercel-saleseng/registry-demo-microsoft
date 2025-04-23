@@ -19,7 +19,7 @@
     },
     {
       "path": "app/(fluent)/layout.tsx",
-      "content": "\"use client\";\n\nimport type React from \"react\";\nimport \"@/app/globals.css\";\nimport { FluentProvider, webLightTheme } from \"@fluentui/react-components\";\nimport { Noto_Sans } from \"next/font/google\";\n\nconst notoSans = Noto_Sans({ subsets: [\"latin\"] });\n\n/**\n * All generations and components should use the Fluent UI webLightTheme\n * with components imported from @fluentui/react-components before using shadcn/ui.\n */\n\nexport default function Layout({ children }: { children: React.ReactNode }) {\n  return (\n    <html lang=\"en\">\n      <body className={notoSans.className}>\n        <main className=\"flex justify-center w-full\">\n          <div className=\"container\">\n            <FluentProvider theme={webLightTheme}>{children}</FluentProvider>\n          </div>\n        </main>\n      </body>\n    </html>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport type React from \"react\";\nimport \"@/app/globals.css\";\nimport { FluentProvider, webLightTheme } from \"@fluentui/react-components\";\nimport { Noto_Sans } from \"next/font/google\";\n\nconst notoSans = Noto_Sans({ subsets: [\"latin\"] });\n\nexport default function Layout({ children }: { children: React.ReactNode }) {\n  return (\n    <html lang=\"en\">\n      <body className={notoSans.className}>\n        <main className=\"flex justify-center w-full\">\n          <div className=\"container\">\n            <FluentProvider theme={webLightTheme}>{children}</FluentProvider>\n          </div>\n        </main>\n      </body>\n    </html>\n  );\n}\n",
       "type": "registry:file",
       "target": "app/layout.tsx"
     }
